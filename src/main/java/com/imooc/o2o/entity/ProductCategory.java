@@ -2,17 +2,17 @@ package com.imooc.o2o.entity;
 
 import java.util.Date;
 
-//ÉÌÆ·Àà±ðÀà
+//ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½
 public class ProductCategory {
-	//ÉÌÆ·Àà±ðid
+	//ï¿½ï¿½Æ·ï¿½ï¿½ï¿½id
 	private Long productCategoryId;
-	//µêÆÌid
+	//ï¿½ï¿½ï¿½ï¿½id
 	private Long shopId;
-	//ÉÌÆ·Àà±ðÃû×Ö
+	//ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private Long productCategoryName;
-	//ÉÌÆ·È¨ÖØ
+	//ï¿½ï¿½Æ·È¨ï¿½ï¿½
 	private Integer priority;
-	//ÉÌÆ·´´½¨Ê±¼ä
+	//ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	private Date createTime;
 	
 	public Long getProductCategoryId() {
