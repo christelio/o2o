@@ -6,7 +6,7 @@ $(function() {
 	getlist();
 	function getlist(e) {
 		$.ajax({
-			url : "/fl/shopadmin/getshoplist",
+			url : "/o2o/shopadmin/getshoplist",
 			type : "get",
 			dataType : "json",
 			success : function(data) {

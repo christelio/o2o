@@ -22,15 +22,15 @@ public class ProductCategoryManagementController {
 	@Autowired
 	private ProductCategoryService productCategoryService;
 	
+	//通过在线的shopId查询当前商品列表
 	@RequestMapping(value="/getproductcategorylist",method=RequestMethod.GET)
 	@ResponseBody
 	private Result<List<ProductCategory>> getProductCategoryList(HttpServletRequest request)
 	{
-		Shop shop=new Shop();
-		shop.setShopId(1L);
-		request.getSession().setAttribute("currentShop",shop);
 		List<ProductCategory>list=null;
 		Shop currentShop=(Shop)request.getSession().getAttribute("currentShop");
+		currentShop=new Shop();
+		currentShop.setShopId(1L);
 		if(currentShop!=null&&currentShop.getShopId()>0)
 		{
 			list=productCategoryService.getProductCategoryList(currentShop.getShopId());

@@ -9,14 +9,19 @@ $(function() {
 	var shopInfoUrl = '/o2o/shopadmin/getshopbyid?shopId=' + shopId;
 	var editShopUrl = '/o2o/shopadmin/modifyshop';
 	if (!isEdit) {
+
 		getShopInitInfo();
 	} else {
-		getShopInitInfo(shopId)
+
+		getShopInfo(shopId);
 	}
 
-	function getShopInitInfo(shopId) {
+	function getShopInfo(shopId) {
+		alert(shopInfoUrl);
 		$.getJSON(shopInfoUrl, function(data) {
+			alert(shopInfoUrl);
 			if (data.success) {
+
 				var shop = data.shop;
 				$('#shop-name').val(shop.shopName);
 				$('#shop-addr').val(shop.shopAddr);
@@ -34,7 +39,8 @@ $(function() {
 				$('#shop-category').html(shopCategory);
 				$('#shop-category').attr('disabled', 'disabled');
 				$('#area').html(tempAreaHtml);
-				$("#area option[data-id='"+shop.area.areaId+"']").attr("selected","selected");
+				$("#area option[data-id='" + shop.area.areaId + "']").attr(
+						"selected", "selected");
 			}
 		});
 	}

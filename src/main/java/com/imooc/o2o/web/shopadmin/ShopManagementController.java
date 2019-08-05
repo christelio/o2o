@@ -54,7 +54,7 @@ public class ShopManagementController {
 			Object currentShopObj = request.getSession().getAttribute("currentShop");
 			if (currentShopObj == null) {
 				modelMap.put("redirect", true);
-				modelMap.put("url", "/o2o/shop/shoplist");
+				modelMap.put("url", "/o2o/shopadmin/shoplist");
 			} else {
 				Shop currentShop = (Shop) currentShopObj;
 				modelMap.put("redirect", true);
@@ -103,6 +103,7 @@ public class ShopManagementController {
 	@ResponseBody
 	private Map<String,Object>getShopById(HttpServletRequest request)
 	{
+		System.out.println("123");
 		Map<String,Object> modelMap=new HashMap<String,Object>();
 		Long shopId=HttpServletRequestUtil.getLong(request, "shopId");
 		if(shopId>-1)
@@ -112,14 +113,14 @@ public class ShopManagementController {
 				List<Area> areaList=areaService.getAreaList();
 				modelMap.put("shop",shop);
 				modelMap.put("areaList",areaList);
-				modelMap.put("sucess",true);
+				modelMap.put("success",true);
 			}catch(Exception e)
 			{
-				modelMap.put("sucess",false);
+				modelMap.put("success",false);
 				modelMap.put("errMsg",e.toString());
 			}
 		}else {
-			modelMap.put("sucess",false);
+			modelMap.put("success",false);
 			modelMap.put("errMsg","empty shopId");
 		}
 		return modelMap;
